@@ -1,0 +1,5 @@
+alias cls='clear'
+alias del='rm -r'
+alias home="cd $HOME"
+alias neo="clear && neofetch"
+alias g="git"
