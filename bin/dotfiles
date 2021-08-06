@@ -1,0 +1,139 @@
+#!/bin/bash
+
+##############################################################################
+##
+##      Pewrie Bontal's Dotfiles Project
+##      Painless Way to manage my dotfiles with basic git functions.
+##      http://pewriebontal.ml
+##
+##############################################################################
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+source "$HOME/.config/dotfiles/config.cfg"
+
+#dependencies=(
+#    "git"
+#)
+
+prompt() {
+    case ${1} in
+    "-s" | "--success")
+        printf "${GREEN}%s${NC}\n" "${2}"
+        ;;
+    "-e" | "--error")
+        printf "${RED}%s${NC}\n" "${2}"
+        ;;
+    "-w" | "--warning")
+        printf "${ORANGE}%s${NC}\n" "${2}"
+        ;;
+    "-i" | "--info")
+        printf "${BLUE}%s${NC}\n" "${2}"
+        ;;
+    *)
+        printf "${GREEN}%s${NC}\n" "${2}"
+        ;;
+    esac
+}
+
+ShowUsage() {
+    ShowVersion
+    printf "%s" \
+        "Usage: ${0##*/} [ options ]
+    -h,     --help          -> Show this help.
+    -i,     --install       -> Install the dotfiles.
+    -a,     --add           -> Add File.
+    -r,     --remove        -> Remove File.
+    -v,     --version       -> Show Version.
+    -c,     --commit        -> Commit.
+    -co,    --checkout      -> Checkout.
+    -s,     --status        -> Status.
+    -p,     --push          -> Push to your remote git repo.
+"
+}
+
+ShowVersion() {
+    prompt -i " Pewrie Bontal's Dotfiles Project (C) Copyright 2021 
+v0.1"
+}
+
+Status() {
+    $DF_CFG status
+}
+
+Add(){
+    $DF_CFG add "${@:2}"
+}
+
+Remove(){
+    $DF_CFG rm "${@:2}"
+}
+
+Commit(){
+    $DF_CFG commit -m "${@:2}"
+}
+
+Push(){
+    $DF_CFG push
+}
+
+Install() {
+    git clone --bare $REPO $DOTFILES_PATH
+    $DF_CFG checkout --force
+    git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git $ZSH
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    zsh
+}
+
+main() {
+    var=$1
+    index=$2
+    case ${var} in
+    -h | --help)
+        ShowUsage
+        ;;
+    -i | --install)
+        prompt -i "Installing..."
+        Install
+        ;;
+    -a | --add)
+        prompt -i "Adding..."
+        Add "${@}"
+        ;;
+    -r | --remove)
+        prompt -i "Removing..."
+        Remove "${@}"
+        ;;
+    -v | --version)
+        ShowVersion
+        ;;
+    -c | --commit)
+        prompt -i "Commiting..."
+        Commit "${@}"
+        ;;
+    -s | --status)
+        Status
+        ;;
+    -p | --push)
+        prompt -i "Pushing..."
+        Push "${@}"
+        ;;
+    *)
+        prompt -w "Warning: --unknown command '${var}'"
+        ;;
+    esac
+}
+
+init() {
+    if [ $# -eq 0 ]; then
+        prompt -e "ERROR: This script needs at least one argument"
+    else
+        main "${@}"
+    fi
+}
+
+init "${@}"
