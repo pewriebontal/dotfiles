@@ -3,3 +3,4 @@ alias del='rm -r'
 alias home="cd $HOME"
 alias neo="clear && neofetch"
 alias g="git"
+alias dotfilesc="git --git-dir=$DOTFILES_PATH --work-tree=$HOME"
