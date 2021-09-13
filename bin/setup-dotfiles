@@ -1,0 +1,9 @@
+#!/bin/sh
+
+source "$HOME/.config/dotfiles/config.cfg"
+
+git clone --bare $REPO $DOTFILES_PATH
+$dotfilesc checkout --force
+$dotfilesc config --local status.showUntrackedFiles no
+git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git $ZSH
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k

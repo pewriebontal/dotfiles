@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ##############################################################################
 ##
@@ -45,7 +45,6 @@ ShowUsage() {
     printf "%s" \
         "Usage: ${0##*/} [ options ]
     -h,     --help          -> show this help.
-    -i,     --install       -> install the dotfiles.
     -v,     --version       -> show version.
     -r,     --run           -> run git commands.
 "
@@ -59,25 +58,12 @@ Run(){
     $dotfilesc "${@:2}"
 }
 
-Install() {
-    git clone --bare $REPO $DOTFILES_PATH
-    $dotfilesc checkout --force
-    $dotfilesc config --local status.showUntrackedFiles no
-    git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git $ZSH
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    zsh
-}
-
 main() {
     var=$1
     index=$2
     case ${var} in
     -h | --help)
         ShowUsage
-        ;;
-    -i | --install)
-        prompt -i "Installing..."
-        Install
         ;;
     -r | --run)
     #    prompt -i "Running..."
