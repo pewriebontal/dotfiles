@@ -2,7 +2,7 @@
 
 ##############################################################################
 ##
-##      Pewrie Bontal's Dotfiles Project
+##      Pewrie Bontal's Dotfiles
 ##      Painless Way to manage my dotfiles with basic git functions.
 ##      https://pewriebontal.ml
 ##
@@ -15,10 +15,6 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 source "$HOME/.config/dotfiles/config.cfg"
-
-#dependencies=(
-#    "git"
-#)
 
 prompt() {
     case ${1} in
@@ -46,7 +42,7 @@ ShowUsage() {
         "Usage: ${0##*/} [ options ]
     -h,     --help          -> show this help.
     -v,     --version       -> show version.
-    -r,     --run           -> run git commands.
+     r,     run           -> run git commands.
 "
 }
 
@@ -65,7 +61,7 @@ main() {
     -h | --help)
         ShowUsage
         ;;
-    -r | --run)
+    r  | --run)
     #    prompt -i "Running..."
         Run "${@}"
         ;;    
