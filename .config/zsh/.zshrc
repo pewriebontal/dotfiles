@@ -5,7 +5,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
+HISTFILE=~/.cache/zsh_history
+
+test -s ~/.config/env && . ~/.config/env || true
+
+source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
+
+test -s "$HOME/.config/functions" && . "$HOME/.config/functions" || true
+test -s "$HOME/.config/aliasrc" && . "$HOME/.config/aliasrc" || true

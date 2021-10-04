@@ -1,1 +1,1 @@
-test -s ~/.config/env && . ~/.config/env || true
+export ZDOTDIR=$HOME/.config/zsh

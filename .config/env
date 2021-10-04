@@ -1,5 +1,3 @@
-test -s "$HOME/.config/functions" && . "$HOME/.config/functions" || true
-test -s "$HOME/.config/aliasrc" && . "$HOME/.config/aliasrc" || true
 export LIBRARY="$HOME/Library"
 export ANDROID_HOME="$LIBRARY/android/android-sdk"
 export DOTFILES_PATH="$HOME/.local/share/dotfiles"
