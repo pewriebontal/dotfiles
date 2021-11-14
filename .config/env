@@ -1,7 +1,9 @@
 export LIBRARY="$HOME/Library"
-export ANDROID_HOME="$LIBRARY/android/android-sdk"
+export ANDROID_SDK_ROOT="$LIBRARY/android/android-sdk"
 export DOTFILES_PATH="$HOME/.local/share/dotfiles"
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$LIBRARY/npm/bin
 export PATH=$PATH:$LIBRARY/flutter/bin
+export PATH=$PATH:"$HOME/.local/bin"
+source $HOME/.cargo/env

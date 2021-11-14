@@ -41,13 +41,13 @@ ShowUsage() {
     printf "%s" \
         "Usage: ${0##*/} [ options ]
     -h,     --help          -> show this help.
-    -v,     --version       -> show version.
-     r,     run           -> run git commands.
+    -v,     --version       -> show about.
+     r,     run             -> run git commands.
 "
 }
 
 ShowVersion() {
-    prompt -i " Pewrie Bontal's Dotfiles Project (C) Copyright 2021 "
+    prompt -i " Pewrie Bontal's Dotfiles "
 }
 
 Run(){
@@ -62,7 +62,6 @@ main() {
         ShowUsage
         ;;
     r  | --run)
-    #    prompt -i "Running..."
         Run "${@}"
         ;;    
     -v | --version)

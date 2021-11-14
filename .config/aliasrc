@@ -2,16 +2,22 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rmdir='rm -r'
 
+alias dfx='dotfiles r'
+
 alias cls='clear'
 alias del='rm -r'
 alias move='mv'
 alias copy='cp'
+alias c="cat"
+alias t="touch"
 
 alias home="cd $HOME"
 alias neo="clear && neofetch"
+alias v='vim'
+alias weather='cls && curl wttr.in'
+alias py='python3'
 
 alias g="git"
-alias dotfilesc="git --git-dir=$DOTFILES_PATH --work-tree=$HOME"
 
 alias df='df -h'
 alias free='free -m'
