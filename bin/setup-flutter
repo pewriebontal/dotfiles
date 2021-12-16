@@ -1,5 +1,5 @@
 #!/bin/sh
 
-git clone https://github.com/flutter/flutter.git ~/Library/flutter -b dev
+git clone https://github.com/flutter/flutter.git ~/Library/flutter -b dev --depth 1
 flutter precache
 flutter doctor -v

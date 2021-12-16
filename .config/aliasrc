@@ -11,6 +11,7 @@ alias copy='cp'
 alias c="cat"
 alias t="touch"
 
+alias vim="nvim"
 alias home="cd $HOME"
 alias neo="clear && neofetch"
 alias v='vim'

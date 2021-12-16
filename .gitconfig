@@ -2,7 +2,7 @@
 	name = Pewrie Bontal
 	email = hello@pewriebontal.ml
 [core]
-	autocrlf = input
+	autocrlf = false
+	eof = lf
 [credential "https://github.com"]
-	helper = 
 	helper = !gh auth git-credential

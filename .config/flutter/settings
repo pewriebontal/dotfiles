@@ -2,5 +2,7 @@
   "enable-linux-desktop": true,
   "enable-windows-desktop": true,
   "enable-windows-uwp-desktop": true,
-  "enable-web": true
+  "enable-web": true,
+  "enable-fuchsia": true,
+  "enable-macos-desktop": true
 }
