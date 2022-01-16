@@ -1,12 +1,33 @@
 export LIBRARY="$HOME/.local/library"
-export ANDROID_SDK_ROOT="$LIBRARY/android/android-sdk"
 export DOTFILES_PATH="$HOME/.local/share/dotfiles"
-export PATH=$PATH:$ANDROID_SDK_ROOT/tools
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-export PATH=$PATH:$LIBRARY/npm/bin
-export PATH=$PATH:$LIBRARY/flutter/bin
 export PATH=$PATH:"$HOME/.local/bin"
+
+# ~/bin to PATH
+if [ -e "${HOME}/bin" ]
+then
+	export PATH=${HOME}/bin:$PATH
+fi
+
+# Java
 export JAVA_HOME=$LIBRARY/jdk/11
 export JDK_HOME=$LIBRARY/jdk/17
-export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$JDK_HOME/bin
+export PATH=$PATH:$JAVA_HOME/bin
+
+# Android
+export ANDROID_SDK_ROOT="$LIBRARY/android/android-sdk"
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+# Flutter
+export PATH=$PATH:$LIBRARY/flutter/bin
+
+# Wasi
+export WASI_VERSION=14
+export WASI_VERSION_FULL=${WASI_VERSION}.0
+export WASI_SDK_PATH=$LIBRARY/wasi/wasi-sdk-${WASI_VERSION_FULL}
+
+export PATH=$PATH:$LIBRARY/binaryen/bin
+
+# NodeJs
+export PATH=$PATH:$LIBRARY/npm/bin

@@ -1,2 +1,2 @@
-sudo ln -s ~/Library/npm/bin/npm /usr/bin/npm-default
-sudo ln -s ~/Library/npm/bin/npx /usr/bin/npx-default
+sudo ln -s ${library}/npm/bin/npm /usr/bin/npm-default
+sudo ln -s ${library}/npm/bin/npx /usr/bin/npx-default

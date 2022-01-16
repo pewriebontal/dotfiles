@@ -1,5 +1,5 @@
-test -s "$HOME/.config/functions" && . "$HOME/.config/functions" || true
+test -s "$HOME/.config/fun" && . "$HOME/.config/fun" || true
 test -s "$HOME/.config/aliasrc" && . "$HOME/.config/aliasrc" || true
 source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
-source $HOME/.cargo/env
+#test -s "$HOME/.cargo/env" && source $HOME/.cargo/env || true
 

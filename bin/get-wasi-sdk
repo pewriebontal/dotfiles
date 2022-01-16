@@ -1,0 +1,21 @@
+#!/bin/sh
+
+cd /tmp
+
+if [ -d wasi_tmp ]; then
+        rm wasi_tmp -r
+fi
+
+mkdir wasi_tmp
+cd wasi_tmp
+
+wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${WASI_VERSION}/wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz
+tar -xvf wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz
+
+if [ -d $LIBRARY/wasi/wasi-sdk-${WASI_VERSION_FULL} ]; then
+	rm $LIBRARY/wasi/wasi-sdk-${WASI_VERSION_FULL} -r
+fi
+
+mv wasi-sdk-${WASI_VERSION_FULL} ${LIBRARY}/wasi
+cd /tmp 
+rm wasi_tmp -rf
