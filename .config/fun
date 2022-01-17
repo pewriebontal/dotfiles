@@ -1,3 +1,8 @@
-mkcd (){
-  mkdir -p -- "$1" && cd -P -- "$1"
+mkcd() {
+  if [[ -d $1 ]]; then
+    echo "$1 already exists!"
+    cd $1
+  else
+    mkdir -p $1 && cd $1
+  fi
 }
