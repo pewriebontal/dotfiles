@@ -1,8 +1,0 @@
-[user]
-	name = Pewrie Bontal
-	email = hello@pewriebontal.ml
-[core]
-	autocrlf = false
-	eof = lf
-[credential "https://github.com"]
-	helper = !gh auth git-credential

@@ -1,0 +1,33 @@
+[user]
+	name = Pewrie Bontal
+	email = hello@pewriebontal.ml
+
+[core]
+	autocrlf = false
+	eof = lf
+
+[init]
+	defaultBranch = main
+
+[credential "https://github.com"]
+	helper = !gh auth git-credential
+
+[alias]
+        a = add
+	ac = add .
+        cm = commit -m
+        ps = push
+	pl = pull
+	mg = merge
+	br = branch
+	cl = clone
+	co = checkout
+	ft = fetch
+	df = diff
+	st = status
+        sh = show
+        rao = remote add origin 
+        rso = remote set-url origin
+	rv = remote -v
+	wc = whatchanged
+
