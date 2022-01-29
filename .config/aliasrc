@@ -4,12 +4,26 @@ alias rmdir='rm -r'
 
 alias dfx='dotfiles r'
 
+alias pls='sudo'
+
+alias l='ls -alF'
+alias la='ls -la'
+alias ll='ls -l'
+alias ls='ls --color=auto'
+alias ls-l='ls -l'
+alias md='mkdir -p'
+alias rd='rmdir'
+alias o=less
+alias ip='ip --color=auto'
+
 alias cls='clear'
 alias del='rm -r'
 alias move='mv'
 alias copy='cp'
 alias c="cat"
 alias t="touch"
+alias beep='echo -en "\007"'
+alias grep='grep --color=auto'
 
 alias vim="nvim"
 alias home="cd $HOME"
@@ -22,6 +36,8 @@ alias g="git"
 
 alias df='df -h'
 alias free='free -m'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
 case "$(uname -s)" in 
 
@@ -35,6 +51,10 @@ Linux)
 
 esac
 
+
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'

@@ -7,7 +7,9 @@ fi
 
 source "$HOME/.config/source"
 
+HISTSIZE=1000
 HISTFILE=~/.cache/zsh_history
+SAVEHIST=500
 
 test -s ~/.config/env && . ~/.config/env || true
 
