@@ -32,15 +32,13 @@ prompt() {
 }
 
 
-set_up(){
-	cd /tmp
-	
-	if [ ! -d jdk_temp_download ]; then
-		mkdir jdk_temp_download
+set_up(){	
+	if [ -d /tmp/jdk_temp_download ]; then
+		rm -rf /tmp/jdk_temp_download
 	fi
 	
-	cd jdk_temp_download
-	rm -r *
+	mkdir /tmp/jdk_temp_download
+	cd /tmp/jdk_temp_download
 
 	prompt -i "Installing: JDK ${ver}"
 	
