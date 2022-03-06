@@ -22,6 +22,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 
 # Android
 export ANDROID_SDK_ROOT="$LIBRARY/android/sdk"
+export ANDROID_HOME="$ANDROID_SDK_ROOT"
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 

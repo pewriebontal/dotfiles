@@ -31,6 +31,7 @@ alias neo="clear && neofetch"
 alias v='vim'
 alias weather='cls && curl wttr.in'
 alias py='python3'
+alias zyp='zypper'
 
 alias g="git"
 

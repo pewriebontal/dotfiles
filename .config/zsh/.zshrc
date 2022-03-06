@@ -7,6 +7,8 @@ fi
 
 source "$HOME/.config/source"
 
+setopt   autocd
+
 HISTSIZE=1000
 HISTFILE=~/.cache/zsh_history
 SAVEHIST=500

@@ -5,6 +5,16 @@
 # https://pewriebontal.ml
 ##################################################################################
 
+# -z = zero string
+
+if [[ -z "${LIBRARY}" ]]; then
+        LIBRARY='~/.local/library'
+fi
+
+if [[ -z "${ANDROID_SDK_ROOT}" ]]; then
+	ANDROID_SDK_ROOT='$LIBRARY/android'
+fi
+
 set_up()
 {
 	if [[ -d /tmp/android_sdk_temp ]]; then
