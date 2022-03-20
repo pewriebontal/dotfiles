@@ -1,5 +1,12 @@
 test -s "$HOME/.config/fun" && . "$HOME/.config/fun" || true
 test -s "$HOME/.config/aliasrc" && . "$HOME/.config/aliasrc" || true
-source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+
+# may break on different shell like ash
+# FIX me later
+
+if [ -z "$BASH" ]; then 
+	source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+fi
+
 #test -s "$HOME/.cargo/env" && source $HOME/.cargo/env || true
 
