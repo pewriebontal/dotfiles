@@ -9,6 +9,9 @@ source "$HOME/.config/sources"
 
 setopt   autocd
 
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 test -s ~/.config/env && . ~/.config/env || true
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
