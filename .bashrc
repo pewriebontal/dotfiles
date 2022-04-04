@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 [[ -f ${XDG_CONFIG_HOME}/env ]] && source ${XDG_CONFIG_HOME}/env
 [[ -f ${XDG_CONFIG_HOME}/fun ]] && source ${XDG_CONFIG_HOME}/fun
 [[ -f ${XDG_CONFIG_HOME}/aliasrc ]] && source ${XDG_CONFIG_HOME}/aliasrc
