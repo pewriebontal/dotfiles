@@ -1,5 +1,17 @@
 #!/bin/sh
 
-git clone https://github.com/flutter/flutter.git $LIBRARY/flutter -b dev --depth 1
-flutter precache
-flutter doctor -v
+main() {
+    git clone https://github.com/flutter/flutter $LIBRARY/flutter -b $1
+    flutter precache
+    flutter doctor -v
+}
+
+init() {
+    if [ $# -eq 0 ]; then
+    	echo pls specify branch
+    else
+        main "${@}"
+    fi
+}
+
+init "${@}"

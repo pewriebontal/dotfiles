@@ -5,6 +5,12 @@ REPO="https://github.com/pewriebontal/dotfiles.git"
 dotfilesx="git --git-dir=$DOTFILES_PATH --work-tree=$HOME"
 
 git clone --bare $REPO $DOTFILES_PATH
+
+if [ -e ~/.bashrc ]
+then
+	mv ~/.bashrc ~/.bashrc.bak
+fi
+
 $dotfilesx checkout
 $dotfilesx config --local status.showUntrackedFiles no
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/plugins/powerlevel10k

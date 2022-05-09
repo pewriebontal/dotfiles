@@ -7,43 +7,55 @@
 
 # -z = zero string
 
-if [[ -z "${LIBRARY}" ]]; then
+if [ -z "${LIBRARY}" ]
+then
         LIBRARY='~/.local/library'
 fi
 
-if [[ -z "${ANDROID_SDK_ROOT}" ]]; then
+if [ -z "${ANDROID_SDK_ROOT}" ]
+then
 	ANDROID_SDK_ROOT='$LIBRARY/android'
 fi
 
 set_up()
 {
-	if [[ -d /tmp/android_sdk_temp ]]; then
+	if [ -d /tmp/android_sdk_temp ]
+	then
 		echo Removing previous remaining cache... && rm -rf /tmp/android_sdk_temp && mkdir /tmp/android_sdk_temp
 	else
 		mkdir /tmp/android_sdk_temp
 	fi
+	
 	cd /tmp/android_sdk_temp
 	wget "$(curl -s https://developer.android.com/studio | grep -oP "https://dl.google.com/android/repository/commandlinetools-linux-[0-9]+_latest.zip")"
+	
 	unzip commandlinetools-linux-*_latest.zip
 	rm commandlinetools-linux-*_latest.zip
 	mkdir -p $ANDROID_SDK_ROOT/cmdline-tools 
 	mv cmdline-tools $ANDROID_SDK_ROOT/cmdline-tools/latest
 	cd $ANDROID_SDK_ROOT/cmdline-tools
 	rm -r /tmp/android_sdk_temp
+	
 	clear
+	
 	yes | latest/bin/sdkmanager --licenses
+	
 	clear
-	if [[ -x "$(command -v cowsay)" ]]; then
-		cowsay -f tux "Finished Installing Android SDK...";
+	
+	if [ -x "$(command -v cowsay)" ]
+	then
+		cowsay -f tux "Finished Installing Android SDK..."
 	else
-		echo "Finished Installing Android SDK...";
+		echo "Finished Installing Android SDK..."
 	fi
 }
 
-if [[ -d $ANDROID_SDK_ROOT && ! -x "$(command -v cowsay)" ]]; then 
-	echo Android Sdk already exists; 
-elif [[ -d $ANDROID_SDK_ROOT && -x "$(command -v cowsay)" ]]; then 
-	cowsay -f tux "Android Sdk already exists";
+if [ -d $ANDROID_SDK_ROOT && ! -x "$(command -v cowsay)" ] 
+then 
+	echo Android Sdk already exists 
+elif [ -d $ANDROID_SDK_ROOT && -x "$(command -v cowsay)" ]
+then 
+	cowsay -f tux "Android Sdk already exists"
 else 
-	set_up ; 
+	set_up 
 fi

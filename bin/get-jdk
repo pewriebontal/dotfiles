@@ -50,11 +50,13 @@ set_up(){
 
         mv amazon-corretto-${ver}*linux-x64 ${ver} 
 	
-	if [ ! -d $LIBRARY/jdk/ ]; then
+	if [ ! -d $LIBRARY/jdk/ ]
+	then
 		mkdir $LIBRARY/jdk/ -p
         fi
 
-	if [ -d $LIBRARY/jdk/${ver} ]; then
+	if [ -d $LIBRARY/jdk/${ver} ]
+	then
                 prompt -w "Warning: JDK already exists, removing..."
 		rm $LIBRARY/jdk/${ver} -rf
         fi
@@ -64,11 +66,13 @@ set_up(){
 	cd /tmp
 	
 	prompt -i "Cleaning: Temp files..."
-	if [ -d /tmp/jdk_temp_download ]; then
+	if [ -d /tmp/jdk_temp_download ]
+	then
 		rm -rf jdk_temp_download
 	fi
 	
-	if [ -d $LIBRARY/jdk/${ver} ]; then
+	if [ -d $LIBRARY/jdk/${ver} ]
+	then
 		prompt -s "Sucess: Finished installing."
 	else
 		prompt -e "ERROR: Something went wrong."
@@ -88,8 +92,6 @@ main() {
 	    ;;
  esac
 }
-
-
 
 
 init() {

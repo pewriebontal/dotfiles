@@ -2,11 +2,25 @@
 # use npm from library folder
 # system npm sucks.
 
-if [[ -L /usr/bin/npm-default.bak ]]; then sudo rm /usr/bin/npm-default.bak; fi
-if [[ -L /usr/bin/npx-default.bak ]]; then sudo rm /usr/bin/npx-default.bak; fi
+if [ -L /usr/bin/npm-default.bak ]
+then 
+	sudo rm /usr/bin/npm-default.bak
+fi
 
-if [[ -L /usr/bin/npm-default ]]; then sudo mv /usr/bin/npm-default /usr/bin/npm-default.bak; fi
-if [[ -L /usr/bin/npx-default ]]; then sudo mv /usr/bin/npx-default /usr/bin/npx-default.bak; fi
+if [ -L /usr/bin/npx-default.bak ]
+then
+	sudo rm /usr/bin/npx-default.bak
+fi
+
+if [ -L /usr/bin/npm-default ]
+then
+	sudo mv /usr/bin/npm-default /usr/bin/npm-default.bak
+fi
+
+if [ -L /usr/bin/npx-default ]
+then 
+	sudo mv /usr/bin/npx-default /usr/bin/npx-default.bak
+fi
 
 sudo ln -s ${LIBRARY}/npm/bin/npm /usr/bin/npm-default
 sudo ln -s ${LIBRARY}/npm/bin/npx /usr/bin/npx-default
