@@ -42,11 +42,14 @@ set_up(){
 
 	prompt -i "Installing: JDK ${ver}"
 	
-	wget https://corretto.aws/downloads/latest/amazon-corretto-${ver}-x64-linux-jdk.tar.gz
-	tar -xf amazon-corretto-${ver}-x64-linux-jdk.tar.gz
-	rm amazon-corretto-${ver}-x64-linux-jdk.tar.gz
-	mv amazon-corretto-${ver}*linux-x64 ${ver}
-        
+	curl https://corretto.aws/downloads/latest/amazon-corretto-${ver}-x64-linux-jdk.tar.gz -Lo corretto-${ver}.tar.gz
+	
+	tar -xf corretto-${ver}.tar.gz
+	
+	rm corretto-${ver}.tar.gz
+
+        mv amazon-corretto-${ver}*linux-x64 ${ver} 
+	
 	if [ ! -d $LIBRARY/jdk/ ]; then
 		mkdir $LIBRARY/jdk/ -p
         fi
@@ -57,33 +60,33 @@ set_up(){
         fi
 
 	mv ${ver} $LIBRARY/jdk/${ver}
+	clear
 	cd /tmp
-	prompt -i "Cleaning: Temp files"
-	rm -rf jdk_temp_download
 	
-	prompt -s "Sucess: Finished Installing"
-}
+	prompt -i "Cleaning: Temp files..."
+	if [ -d /tmp/jdk_temp_download ]; then
+		rm -rf jdk_temp_download
+	fi
+	
+	if [ -d $LIBRARY/jdk/${ver} ]; then
+		prompt -s "Sucess: Finished installing."
+	else
+		prompt -e "ERROR: Something went wrong."
+		prompt -e "URL not found. It either doesn’t exist or was deleted. Or perhaps you don’t exist."
+	fi
+	}
 
 main() {
-    var=$1
-    case ${var} in
-    8)
-	ver='8'
-	set_up
-	;;
-    11)
-	ver='11'
-	set_up
-        ;;
-    17)
-	ver='17'
-	set_up
-        ;;
+    ver=$1 
+    case ${ver} in 
+    ''|*[!0-9]*)
+	    prompt -e "ERROR: Not a valid version"
+	    ;;
     *)
-        prompt -w "Warning: unknown version '${var}'"
-	prompt -i "Available: 8, 11, 17"
-	;;
-    esac
+	    ver=$1
+	    set_up
+	    ;;
+ esac
 }
 
 
@@ -92,7 +95,7 @@ main() {
 init() {
     if [ $# -eq 0 ]; then
         prompt -e "ERROR: Require JDK version"
-	prompt -i "Example: setup-jdk 8"
+	prompt -i "Example: get-jdk 8"
     else
         main "${@}"
     fi

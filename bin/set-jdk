@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set_ver() {
+	echo "export JAVA_HOME=$LIBRARY/jdk/${ver}" > ${XDG_CONFIG_HOME}/jenv
+}
+
+main() {
+	ver=$1
+	case ${ver} in
+	''|*[!0-9]*)
+		echo "ERROR: Not a valid version"
+	;;
+	*)
+	ver=$1
+	set_ver
+	;;
+	esac
+}
+
+post_run() {
+        source ${XDG_CONFIG_HOME}/jenv
+}
+
+init() {
+    if [ $# -eq 0 ]; then
+    	echo GG
+    else
+        main "${@}"
+    fi
+}
+
+init "${@}"
+post_run

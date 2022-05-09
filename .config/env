@@ -20,10 +20,12 @@ then
 fi
 
 # Java
-export JAVA_HOME=$LIBRARY/jdk/11
-export JDK_HOME=$LIBRARY/jdk/17
-export PATH=$PATH:$JDK_HOME/bin
-export PATH=$PATH:$JAVA_HOME/bin
+if [ -e "${XDG_CONFIG_HOME}/jenv" ]
+then
+	source ${XDG_CONFIG_HOME}/jenv
+fi
+
+export PATH=$PATH:${JAVA_HOME}/bin
 
 # Android
 export ANDROID_SDK_ROOT="$LIBRARY/android/sdk"
