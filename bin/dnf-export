@@ -1,0 +1,15 @@
+main() {
+	dnf repoquery --qf '%{name}' --userinstalled \
+	 | grep -v -- '-debuginfo$' \
+	 | grep -v '^\(kernel-modules\|kernel\|kernel-core\|kernel-devel\)$' > $1
+}
+
+init() {
+    if [ $# -eq 0 ]; then
+    	echo GG
+    else
+        main "${@}"
+    fi
+}
+
+init "${@}"

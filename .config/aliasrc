@@ -1,3 +1,5 @@
+alias java="$JAVA_HOME/bin/java"
+
 alias cp="cp -i"
 alias mv="mv -i"
 alias rmdir='rm -r'

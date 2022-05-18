@@ -1,0 +1,13 @@
+main() {
+	dnf install --setopt=strict=0 $(cat $1)
+}
+
+init() {
+    if [ $# -eq 0 ]; then
+    	echo GG
+    else
+        main "${@}"
+    fi
+}
+
+init "${@}"
