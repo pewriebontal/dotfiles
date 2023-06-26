@@ -1,4 +1,4 @@
-test -s "$HOME/.config/fun" && . "$HOME/.config/fun" || true
+test -s "$HOME/.config/func" && . "$HOME/.config/func" || true
 test -s "$HOME/.config/aliasrc" && . "$HOME/.config/aliasrc" || true
 
 # may break on different shell like ash
