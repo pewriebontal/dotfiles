@@ -2,7 +2,7 @@ prefix = ${LIBRARY}/npm
 cache = ${XDG_CACHE_HOME}/npm
 
 init.author.name=Pewrie Bontal
-init.author.email=0x@bontal.ml
+init.author.email=0x@bontal.net
 init.author.url=https://bontal.net/
 init.license=MIT
 init.version=0.0.1
