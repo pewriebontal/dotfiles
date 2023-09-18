@@ -15,6 +15,11 @@
 alias norminette="norminette -R CheckForbiddenSourceHeader"
 alias mini='~/mini-moulinette/mini-moul.sh'
 
+alias francinette="$HOME/francinette/tester.sh"
+alias paco="$HOME/francinette/tester.sh"
+
+#
+
 alias cpl="if [ -e a.out ]; then rm a.out && cc *.c -Wall -Wextra -Werror ; else cc *.c -Wall -Wextra -Werror ; fi"
 
 if [[ $HOST == *"42singapore.sg" ]]; then

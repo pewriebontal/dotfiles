@@ -14,7 +14,7 @@
 # 42
 if [[ $HOST == *"42singapore.sg" ]]; then
 	export USER=mkhaing
-	export MAIL=mkhaing@student.42singapore.sg
+	export MAIL=0x@bontal.net
 fi
 
 # XDG 
