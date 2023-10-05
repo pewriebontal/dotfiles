@@ -7,7 +7,7 @@
 	eof = lf
 
 [init]
-	defaultBranch = main
+	defaultBranch = master
 
 [credential "https://github.com"]
 	helper = !gh auth git-credential

@@ -13,3 +13,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 [[ -f ${XDG_CONFIG_HOME}/sources ]] && source ${XDG_CONFIG_HOME}/sources
 
 PS1='[\u@\h \W]\$ '
+
+alias francinette=/home/bon/francinette/tester.sh
+
+alias paco=/home/bon/francinette/tester.sh
