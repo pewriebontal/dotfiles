@@ -18,6 +18,7 @@ alias mini='~/mini-moulinette/mini-moul.sh'
 alias francinette="$HOME/francinette/tester.sh"
 alias paco="$HOME/francinette/tester.sh"
 
+alias grademe='bash -c "$(curl https://grademe.fr)"'
 #
 
 alias cpl="if [ -e a.out ]; then rm a.out && cc *.c -Wall -Wextra -Werror ; else cc *.c -Wall -Wextra -Werror ; fi"
@@ -65,6 +66,9 @@ alias v='vim'
 alias weather='cls && curl wttr.in'
 alias py='python3'
 alias zyp='zypper'
+
+alias make='make -j${nproc}'
+alias m='make'
 
 alias g="git"
 

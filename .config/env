@@ -55,6 +55,9 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 # Flutter
 export PATH=$PATH:$LIBRARY/flutter/bin
 
+#javacc
+export PATH=$PATH:$LIBRARY/javacc/scripts
+
 # Wasi
 export WASI_VERSION=14
 export WASI_VERSION_FULL=${WASI_VERSION}.0
