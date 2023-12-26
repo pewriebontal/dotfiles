@@ -21,7 +21,8 @@ alias paco="$HOME/francinette/tester.sh"
 alias grademe='bash -c "$(curl https://grademe.fr)"'
 #
 
-alias cpl="if [ -e a.out ]; then rm a.out && cc *.c -Wall -Wextra -Werror ; else cc *.c -Wall -Wextra -Werror ; fi"
+alias cpl="if [ -e a.out ]; then rm a.out && cc *.c -g -std=c99 -Wall -Wextra -Werror ; else cc *.c -g -std=c99 -Wall -Wextra -Werror ; fi"
+alias dbg="gdb -tui --args"
 
 if [[ $HOST == *"42singapore.sg" ]]; then
 	alias nvim="$HOME/bin/nvim.appimage"
