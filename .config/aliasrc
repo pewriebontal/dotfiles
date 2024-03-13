@@ -25,7 +25,8 @@ alias cpl="if [ -e a.out ]; then rm a.out && cc *.c -g -std=c99 -Wall -Wextra -W
 alias dbg="gdb -tui --args"
 
 if [[ $HOST == *"42singapore.sg" ]]; then
-	alias nvim="$HOME/bin/nvim.appimage"
+	alias nvim="$HOME/Apps/nvim.appimage"
+	alias code="$HOME/Apps/VSCode.AppImage"
 fi
 
 alias java="$JAVA_HOME/bin/java"
