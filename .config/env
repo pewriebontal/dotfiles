@@ -20,6 +20,12 @@ if [[ $HOST == *"42singapore.sg" ]]; then
 	SSH_AUTH_SOCK=0 
 fi
 
+# Wsl
+if [ -f "/etc/wsl.conf" ]; then
+  # Helper to work yubikey on Wsl
+  export SSH_SK_HELPER="/mnt/c/Program Files/OpenSSH/ssh-sk-helper.exe"
+fi
+
 # XDG 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
