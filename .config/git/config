@@ -1,6 +1,7 @@
 [user]
 	name = Pewrie Bontal
 	email = 0x@bontal.net
+	signingkey = ~/.ssh/id_ed25519_sk.pub
 
 [core]
 	autocrlf = false
@@ -12,22 +13,30 @@
 [credential "https://github.com"]
 	helper = !gh auth git-credential
 
-[alias]
-        a = add
-	ac = add .
-        cm = commit -m
-        ps = push
-	pl = pull
-	mg = merge
-	br = branch
-	cl = clone
-	co = checkout
-	ft = fetch
-	df = diff
-	st = status
-        sh = show
-        rao = remote add origin 
-        rso = remote set-url origin
-	rv = remote -v
-	wc = whatchanged
+[gpg]
+  format = ssh
 
+[commit]
+	gpgsign = true
+
+[alias]
+  a = add
+  ac = add .
+  cm = commit -m
+  ps = push
+  pl = pull
+  mg = merge
+  br = branch
+  cl = clone
+  co = checkout
+  ft = fetch
+  df = diff
+  st = status
+  sh = show
+  rao = remote add origin 
+  rso = remote set-url origin
+  rv = remote -v
+  wc = whatchanged
+
+[includeIf "gitdir:~/42/"]
+  path =~/.config/git/config.42
