@@ -15,6 +15,9 @@
 if [[ $HOST == *"42singapore.sg" ]]; then
 	export USER=mkhaing
 	export MAIL=0x@bontal.net
+	
+	# Yubikey on 42 Workstation doesnt work if not
+	SSH_AUTH_SOCK=0 
 fi
 
 # XDG 
