@@ -58,6 +58,10 @@ alias t="touch"
 alias beep='echo -en "\007"'
 alias grep='grep --color=auto'
 
+if [ $(command -v zoxide) ]; then
+    alias cd='z'
+fi
+
 alias ov="/bin/vim"
 alias vim="nvim"
 
