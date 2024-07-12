@@ -15,5 +15,5 @@ export XDG_CONFIG_HOME="$HOME/.config"
 PS1='[\u@\h \W]\$ '
 
 alias francinette=/home/bon/francinette/tester.sh
-
 alias paco=/home/bon/francinette/tester.sh
+eval "$(zoxide init bash)"
