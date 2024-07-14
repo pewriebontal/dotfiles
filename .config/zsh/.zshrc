@@ -17,5 +17,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh/p10k.zsh ]] || source ~/.config/zsh/p10k.zsh
 
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+fortune | cowsay
+
 eval "$(zoxide init zsh)"
 # ~

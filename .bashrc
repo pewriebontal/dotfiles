@@ -16,4 +16,7 @@ PS1='[\u@\h \W]\$ '
 
 alias francinette=/home/bon/francinette/tester.sh
 alias paco=/home/bon/francinette/tester.sh
+
+fortune | cowsay
+
 eval "$(zoxide init bash)"
