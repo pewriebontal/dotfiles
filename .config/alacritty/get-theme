@@ -1,0 +1,2 @@
+#!/bin/bash
+git clone https://github.com/alacritty/alacritty-theme $XDG_CONFIG_HOME/alacritty/themes
