@@ -1,0 +1,19 @@
+[Added Associations]
+application/pdf=microsoft-edge.desktop;
+x-scheme-handler/geo=google-maps-geo-handler.desktop;
+x-scheme-handler/http=microsoft-edge.desktop;
+x-scheme-handler/https=microsoft-edge.desktop;
+x-scheme-handler/mailto=thunderbird-esr.desktop;
+
+[Default Applications]
+application/pdf=microsoft-edge.desktop;
+x-scheme-handler/etcher=balenaEtcher.desktop
+x-scheme-handler/fleet=jetbrains-fleet.desktop
+x-scheme-handler/geo=google-maps-geo-handler.desktop;
+x-scheme-handler/http=microsoft-edge.desktop
+x-scheme-handler/https=microsoft-edge.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
+x-scheme-handler/mailto=thunderbird-esr.desktop;
+x-scheme-handler/ss=Outline.desktop
+x-scheme-handler/ssconf=Outline.desktop
+text/html=microsoft-edge.desktop
