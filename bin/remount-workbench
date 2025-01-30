@@ -1,0 +1,43 @@
+#!/bin/sh
+
+MOUNT_POINT="/workbench"
+
+# Check if a device argument is provided
+if [ -n "$1" ]; then
+    DEVICE="$1"
+else
+    # No device provided, try to detect the currently mounted one
+    DEVICE=$(findmnt -no SOURCE "$MOUNT_POINT" 2>/dev/null)
+
+    if [ -z "$DEVICE" ]; then
+        echo "Error: No device specified and no device currently mounted on $MOUNT_POINT."
+        exit 1
+    fi
+
+    echo "Detected mounted device: $DEVICE"
+fi
+
+if [ ! -d "$MOUNT_POINT" ]; then
+    echo "Creating $MOUNT_POINT..."
+    sudo mkdir -p "$MOUNT_POINT" || { echo "Failed to create $MOUNT_POINT"; exit 1; }
+fi
+
+if [ ! -b "$DEVICE" ]; then
+    echo "Error: Device $DEVICE not found."
+    exit 1
+fi
+
+# Check if already mounted
+MOUNTED_DEVICE=$(findmnt -no SOURCE "$MOUNT_POINT" 2>/dev/null)
+
+if [ -n "$MOUNTED_DEVICE" ]; then
+    echo "Warning: $MOUNT_POINT is already mounted to $MOUNTED_DEVICE"
+    echo "Unmounting $MOUNT_POINT..."
+    sudo umount "$MOUNT_POINT" --force || { echo "Error: Failed to unmount."; exit 1; }
+fi
+
+# Mount the new device
+echo "Mounting $DEVICE to $MOUNT_POINT..."
+sudo mount -o uid=$(id -u),gid=$(id -g) "$DEVICE" "$MOUNT_POINT" || { echo "Error: Mount failed."; exit 1; }
+
+echo "Successfully mounted $DEVICE to $MOUNT_POINT."
