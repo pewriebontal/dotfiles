@@ -1,5 +1,5 @@
-test -s "$HOME/.config/func" && . "$HOME/.config/func" || true
-test -s "$HOME/.config/aliasrc" && . "$HOME/.config/aliasrc" || true
+test -s "${HOME}/.config/func" && . "${HOME}/.config/func" || true
+test -s "${HOME}/.config/aliasrc" && . "${HOME}/.config/aliasrc" || true
 
 # may break on different shell like ash
 # FIX me later
@@ -9,4 +9,3 @@ if [ -z "$BASH" ]; then
 fi
 
 #test -s "$HOME/.cargo/env" && source $HOME/.cargo/env || true
-

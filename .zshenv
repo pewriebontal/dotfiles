@@ -1,6 +1,2 @@
-if [ "$XDG_CONFIG_HOME" = "" ]
-then
-	XDG_CONFIG_HOME=~/.config
-fi
-
-ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"

@@ -7,100 +7,101 @@
 #   By: Pewrie Bontal <0x@bontal.net>      +#++:++#+  +#+    +:+ +#+ +:+ +#+     +#+ +#++:++#++: +#+     */
 #                                         +#+    +#+ +#+    +#+ +#+  +#+#+#     +#+ +#+     +#+ +#+      */
 #   Created: 2019/11/21 23:38:44 by bon  #+#    #+# #+#    #+# #+#   #+#+#     #+# #+#     #+# #+#       */
-#   Updated: 2023/06/21 20:26:02 by bon #########   ########  ###    ####     ### ###     ### ########## */
+#   Updated: 2025/01/31 12:26:02 by bon #########   ########  ###    ####     ### ###     ### ########## */
 #                                                                                                        */
 # ****************************************************************************************************** */
 
-# 42 
+# 42 School aliases
 alias norminette="norminette -R CheckForbiddenSourceHeader"
-alias mini='~/mini-moulinette/mini-moul.sh'
-
-alias francinette="$HOME/francinette/tester.sh"
-alias paco="$HOME/francinette/tester.sh"
-
+alias mini="${HOME}/mini-moulinette/mini-moul.sh"
+alias francinette="${HOME}/francinette/tester.sh"
+alias paco="${HOME}/francinette/tester.sh"
 alias grademe='bash -c "$(curl https://grademe.fr)"'
-#
 
-alias cpl="if [ -e a.out ]; then rm a.out && cc *.c -g -std=c99 -Wall -Wextra -Werror ; else cc *.c -g -std=c99 -Wall -Wextra -Werror ; fi"
+# Development aliases
+alias cpl='[ -e a.out ] && rm a.out; cc *.c -g -std=c99 -Wall -Wextra -Werror'
 alias dbg="gdb -tui --args"
+alias g="git"
+alias java="${JAVA_HOME}/bin/java"
+alias py="python3"
 
+# 42 specific apps
 if [[ $HOST == *"42singapore.sg" ]]; then
-	alias nvim="$HOME/Apps/nvim.appimage"
-	alias code="$HOME/Apps/VSCode.AppImage"
+   alias nvim="${HOME}/Apps/nvim.appimage"
+   alias code="${HOME}/Apps/VSCode.AppImage"
 fi
 
-alias java="$JAVA_HOME/bin/java"
-
+# Safety aliases
 alias cp="cp -i"
 alias mv="mv -i"
-alias rmdir='rm -r'
+alias rm="rm -i"
+alias rmdir="rm -r"
 
-alias dfx='dotfiles r'
+# Custom tools
+alias dfx="dotfiles r"
+alias pls="sudo"
 
-alias pls='sudo'
+# File navigation
+alias l="ls -alF"
+alias la="ls -la"
+alias ll="ls -l"
+alias ls-l="ls -l"
+alias md="mkdir -p"
+alias rd="rmdir"
 
-alias l='ls -alF'
-alias la='ls -la'
-alias ll='ls -l'
-alias ls='ls --color=auto'
-alias ls-l='ls -l'
-alias md='mkdir -p'
-alias rd='rmdir'
-alias o=less
-alias ip='ip --color=auto'
+# Colored output
+alias ls="ls --color=auto"
+alias ip="ip --color=auto"
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
 
-alias cls='clear'
-alias del='rm -r'
-alias move='mv'
-alias copy='cp'
+# System commands
+alias cls="clear"
+alias del="rm -r"
+alias move="mv"
+alias copy="cp"
 alias c="cat"
 alias t="touch"
 alias beep='echo -en "\007"'
-alias grep='grep --color=auto'
+alias df="df -h"
+alias free="free -m"
 
-if [ $(command -v zoxide) ]; then
-    alias cd='z'
-fi
+# Navigation shortcuts
+alias o="less"
+alias home="cd ${HOME}"
+alias neo="clear && neofetch"
+alias weather="cls && curl wttr.in"
+[ -n "$(command -v zoxide)" ] && alias cd="z"
 
+# Editor aliases
 alias ov="/bin/vim"
 alias vim="nvim"
+alias v="vim"
 
+# Package management
+alias zyp="zypper"
 
-alias home="cd $HOME"
-alias neo="clear && neofetch"
-alias v='vim'
-alias weather='cls && curl wttr.in'
-alias py='python3'
-alias zyp='zypper'
+# Build tools
+alias make="make -j$(nproc)"
+alias m="make"
 
-alias make='make -j${nproc}'
-alias m='make'
-
-alias g="git"
-
-alias df='df -h'
-alias free='free -m'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
-case "$(uname -s)" in 
-
-Darwin)
-    alias ls='ls -G'
-    ;;
-
-Linux)
-    alias ls='ls --color=auto'
-    ;;
-
+# OS specific settings
+case "$(uname -s)" in
+   Darwin)
+       alias ls="ls -G"
+       ;;
+   Linux)
+       alias ls="ls --color=auto"
+       ;;
 esac
 
-
-alias cd..='cd ..'
-alias cd...='cd ../..'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-alias .......='cd ../../../../../..'
+# Directory traversal
+alias cd..="cd .."
+alias cd...="cd ../.."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."

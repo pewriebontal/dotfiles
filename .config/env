@@ -7,10 +7,9 @@
 #   By: Pewrie Bontal <0x@bontal.net>      +#++:++#+  +#+    +:+ +#+ +:+ +#+     +#+ +#++:++#++: +#+     */
 #                                         +#+    +#+ +#+    +#+ +#+  +#+#+#     +#+ +#+     +#+ +#+      */
 #   Created: 2019/11/21 23:38:44 by bon  #+#    #+# #+#    #+# #+#   #+#+#     #+# #+#     #+# #+#       */
-#   Updated: 2023/06/21 20:26:02 by bon #########   ########  ###    ####     ### ###     ### ########## */
+#   Updated: 2025/01/31 12:26:02 by bon #########   ########  ###    ####     ### ###     ### ########## */
 #                                                                                                        */
 # ****************************************************************************************************** */
-
 
 # Function to add to PATH only if directory exists
 pathadd() {
@@ -18,7 +17,6 @@ pathadd() {
         PATH="$1${PATH:+":$PATH"}"
     fi
 }
-
 
 # 42
 if [[ $HOST == *"42singapore.sg" ]]; then
@@ -55,9 +53,9 @@ mkdir -p "$XDG_CACHE_HOME" "$XDG_DATA_HOME" "$XDG_STATE_HOME" "$LIBRARY"
 export DOTFILES_PATH="${XDG_DATA_HOME}/dotfiles"
 
 # Shell History settings
-HISTSIZE=2000
 HISTFILE="${XDG_CACHE_HOME}/shell_history"
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Development environments
 export ANDROID_SDK_ROOT="$LIBRARY/android/sdk"
