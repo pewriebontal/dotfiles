@@ -12,9 +12,9 @@ terminal-border: "0"
 
 # Boot menu
 + boot_menu {
-  left = 39%
+  left = 32%
   top = 37%
-  width = 34%
+  width = 44%
   height = 27%
   item_font = "Victor's Pixel Font Regular 32"
   item_color = "#ffffff"

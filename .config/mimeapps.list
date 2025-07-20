@@ -1,19 +1,35 @@
 [Added Associations]
-application/pdf=microsoft-edge.desktop;
+application/pdf=google-chrome.desktop;microsoft-edge.desktop;
+application/uproject=com.epicgames.UnrealEngineEditor.desktop;
+text/html=google-chrome.desktop;microsoft-edge.desktop;
+x-scheme-handler/fleet=jetbrains-fleet-80181d0a-5c94-45d9-9137-57cfd44e553f.desktop;
 x-scheme-handler/geo=google-maps-geo-handler.desktop;
-x-scheme-handler/http=microsoft-edge.desktop;
-x-scheme-handler/https=microsoft-edge.desktop;
-x-scheme-handler/mailto=thunderbird-esr.desktop;
+x-scheme-handler/http=google-chrome.desktop;microsoft-edge.desktop;
+x-scheme-handler/https=google-chrome.desktop;microsoft-edge.desktop;
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-7WKZ62.desktop;thunderbird-esr.desktop;
+x-scheme-handler/ss=Outline.desktop;
+x-scheme-handler/ssconf=Outline.desktop;
+x-scheme-handler/termius=Termius.desktop;
+x-scheme-handler/ssh=ktelnetservice5.desktop;Termius.desktop;
+x-scheme-handler/postman=Postman.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-7WKZ62.desktop;
 
 [Default Applications]
-application/pdf=microsoft-edge.desktop;
+application/pdf=google-chrome.desktop;
+application/uproject=com.epicgames.UnrealEngineEditor.desktop
+text/html=google-chrome.desktop
 x-scheme-handler/etcher=balenaEtcher.desktop
-x-scheme-handler/fleet=jetbrains-fleet.desktop
+x-scheme-handler/fleet=jetbrains-fleet-80181d0a-5c94-45d9-9137-57cfd44e553f.desktop
 x-scheme-handler/geo=google-maps-geo-handler.desktop;
-x-scheme-handler/http=microsoft-edge.desktop
-x-scheme-handler/https=microsoft-edge.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
-x-scheme-handler/mailto=thunderbird-esr.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-7WKZ62.desktop
 x-scheme-handler/ss=Outline.desktop
 x-scheme-handler/ssconf=Outline.desktop
-text/html=microsoft-edge.desktop
+x-scheme-handler/termius=Termius.desktop
+x-scheme-handler/ssh=ktelnetservice5.desktop
+x-scheme-handler/postman=Postman.desktop
+message/rfc822=userapp-Thunderbird-7WKZ62.desktop
+x-scheme-handler/mid=userapp-Thunderbird-7WKZ62.desktop
