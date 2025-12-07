@@ -15,3 +15,5 @@ alias paco="$HOME/francinette/tester.sh"
 fortune | cowsay
 
 eval "$(zoxide init bash)"
+
+. "$HOME/.cargo/env"

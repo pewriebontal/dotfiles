@@ -1,0 +1,6 @@
+sudo pacman -Sy
+sudo pacman -Syu --noconfirm
+yay  -Syu --noconfirm
+flatpak update -y 
+sudo mkinitcpio -P 
+sudo grub-mkconfig -o /boot/grub/grub.cfg

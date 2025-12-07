@@ -35,17 +35,17 @@ fi
 # XDG 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-if mountpoint -q "/workbench"; then
-    export XDG_CACHE_HOME="/workbench/xdg/cache"
-    export XDG_DATA_HOME="/workbench/xdg/data"
-    export XDG_STATE_HOME="/workbench/xdg/state"
-    export LIBRARY="/workbench/library"
-else
+#if mountpoint -q "/workbench"; then
+#    export XDG_CACHE_HOME="/workbench/xdg/cache"
+#    export XDG_DATA_HOME="/workbench/xdg/data"
+#    export XDG_STATE_HOME="/workbench/xdg/state"
+#    export LIBRARY="/workbench/library"
+#else
     export XDG_CACHE_HOME="$HOME/.cache"
     export XDG_DATA_HOME="$HOME/.local/share"
     export XDG_STATE_HOME="$HOME/.local/state"
     export LIBRARY="$HOME/.local/library"
-fi
+#fi
 
 # Create XDG directories
 mkdir -p "$XDG_CACHE_HOME" "$XDG_DATA_HOME" "$XDG_STATE_HOME" "$LIBRARY"

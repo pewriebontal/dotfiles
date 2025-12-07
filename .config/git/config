@@ -40,3 +40,6 @@
 
 [includeIf "gitdir:~/42/"]
   path =~/.config/git/config.42
+
+[includeIf "gitdir:~/Invigilo/"]
+  path =~/.config/git/config.Invigilo

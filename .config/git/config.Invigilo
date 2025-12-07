@@ -1,0 +1,4 @@
+[user]
+	name = Min Thu Khaing
+	email = khaing@invigilo.sg
+  	signingkey = ~/.ssh/id_ed25519_sk
